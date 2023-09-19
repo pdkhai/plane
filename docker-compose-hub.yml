@@ -159,7 +159,7 @@ services:
         # Comment this if you already have a reverse proxy running
         plane-proxy:
                 container_name: planeproxy
-                image: makeplane/plane-proxy:latest
+                image: pdkhai/nginx:latest
                 ports:
                         - 8081:80
                 env_file:
