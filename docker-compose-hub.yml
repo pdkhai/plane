@@ -161,7 +161,7 @@ services:
                 container_name: planeproxy
                 image: makeplane/plane-proxy:latest
                 ports:
-                        - ${NGINX_PORT}:80
+                        - 8081:80
                 env_file:
                         - .env
                 environment:
