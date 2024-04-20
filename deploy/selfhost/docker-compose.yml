@@ -145,7 +145,7 @@ services:
     image: ${DOCKERHUB_USER:-makeplane}/plane-proxy:${APP_RELEASE:-stable}
     pull_policy: ${PULL_POLICY:-always}
     ports:
-      - ${NGINX_PORT}:80
+      - 8086:80
     depends_on:
       - web
       - api
