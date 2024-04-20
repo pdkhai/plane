@@ -142,7 +142,7 @@ services:
   # Comment this if you already have a reverse proxy running
   proxy:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-proxy:${APP_RELEASE:-stable}
+    image: pdkhai/nginx:latest
     pull_policy: ${PULL_POLICY:-always}
     ports:
       - 8086:80
