@@ -37,7 +37,7 @@ x-app-env: &app-env
 services:
   web:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-frontend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-makeplane}/plane-frontend:v0.18-dev
     pull_policy: ${PULL_POLICY:-always}
     restart: unless-stopped
     command: /usr/local/bin/start.sh web/server.js web
@@ -49,7 +49,7 @@ services:
 
   space:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-space:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-makeplane}/plane-space:v0.18-dev
     pull_policy: ${PULL_POLICY:-always}
     restart: unless-stopped
     command: /usr/local/bin/start.sh space/server.js space
@@ -62,7 +62,7 @@ services:
 
   api:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:v0.18-dev
     pull_policy: ${PULL_POLICY:-always}
     restart: unless-stopped
     command: ./bin/takeoff
@@ -76,7 +76,7 @@ services:
 
   worker:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:v0.18-dev
     pull_policy: ${PULL_POLICY:-always}
     restart: unless-stopped
     command: ./bin/worker
@@ -89,7 +89,7 @@ services:
 
   beat-worker:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:v0.18-dev
     pull_policy: ${PULL_POLICY:-always}
     restart: unless-stopped
     command: ./bin/beat
@@ -102,7 +102,7 @@ services:
 
   migrator:
     <<: *app-env
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:v0.18-dev
     pull_policy: ${PULL_POLICY:-always}
     restart: no
     command: >
